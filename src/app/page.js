@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className="h-screen">
-        <h1>Hello, world!</h1>
+        <h1>Hello, world! ~joan</h1>
       </main>
       <Footer />
     </>

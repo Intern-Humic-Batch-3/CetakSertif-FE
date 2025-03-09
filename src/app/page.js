@@ -7,7 +7,6 @@ export default function Home() {
       <Navbar />
       <main className="h-screen">
         <h1>Hello, world!</h1>
-        <p>hi</p>
       </main>
       <Footer />
     </>

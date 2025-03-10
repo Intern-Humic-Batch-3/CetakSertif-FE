@@ -1,4 +1,4 @@
-import { Navbar } from "@/_components/userPageComponents";
+import Navbar from "@/_components/navbar";
 
 export default function UserHomepage() {
 	return (

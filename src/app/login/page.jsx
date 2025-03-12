@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Label, TextInput } from "flowbite-react";
+import { Label } from "flowbite-react";
 
 export default function LoginPage() {
   return (

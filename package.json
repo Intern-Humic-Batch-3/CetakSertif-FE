@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "flowbite": "^3.1.2",
     "flowbite-react": "^0.10.2",
     "next": "14.2.23",
     "phosphor-icons": "^1.4.2",

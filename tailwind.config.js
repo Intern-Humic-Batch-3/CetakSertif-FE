@@ -6,6 +6,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite-react/**/*.js",
+    "./app/**/*.{js,ts,jsx,tsx}",
     flowbite.content(),
   ],
   theme: {
@@ -47,11 +48,6 @@ module.exports = {
         h4: ["31px", "120%"],
         h5: ["25px", "120%"],
         h6: ["20px", "120%"],
-      },
-
-      // Font Family
-      fontFamily: {
-        sans: ["var(--font-poppins)", "Poppins", "sans-serif"],
       },
     },
   },

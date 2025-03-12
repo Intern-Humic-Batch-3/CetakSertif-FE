@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 .text-primary {
-  color: #AD141A;
+	color: #ad141a;
+}
+
+.bg-primary {
+	background-color: #ad141a;
 }
 
 .text-secondary {
-  color: #E61A22;
+	color: #e61a22;
+}
+
+.bg-secondary {
+	background-color: #e61a22;
 }

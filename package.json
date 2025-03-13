@@ -15,7 +15,8 @@
     "next": "14.2.23",
     "phosphor-icons": "^1.4.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -1,32 +1,32 @@
-export default function LogOut({ className }) {
+export default function ImageSquare({ className }) {
 	return (
 		<>
-			<svg
-				className={className}
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 256 256">
+			<svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 				<rect width="256" height="256" fill="none" />
-				<polyline
-					points="112 40 48 40 48 216 112 216"
+				<rect
+					x="40"
+					y="40"
+					width="176"
+					height="176"
+					rx="8"
 					fill="none"
 					stroke="currentColor"
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					strokeWidth="16"
 				/>
-				<line
-					x1="112"
-					y1="128"
-					x2="224"
-					y2="128"
+				<circle
+					cx="96"
+					cy="96"
+					r="16"
 					fill="none"
 					stroke="currentColor"
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					strokeWidth="16"
 				/>
-				<polyline
-					points="184 88 224 128 184 168"
+				<path
+					d="M56.69,216,166.34,106.34a8,8,0,0,1,11.32,0L216,144.69"
 					fill="none"
 					stroke="currentColor"
 					strokeLinecap="round"

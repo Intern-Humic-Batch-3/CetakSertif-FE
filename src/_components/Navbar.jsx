@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Button, Navbar } from "flowbite-react";
 import Image from "next/image";
-import WarningCircle from "@/icons/warningCircle"; // Pastikan file ini ada, atau hapus jika tidak diperlukan
 
 export default function CustomNavbar({ userName = "Febry Andrias" }) {
   const [popUp, setPopUp] = useState(false);

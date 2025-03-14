@@ -1,4 +1,4 @@
-import { content as _content, plugin } from "flowbite-react/tailwind";
+const flowbite = require("flowbite-react/tailwind");
 
 module.exports = {
   content: [
@@ -18,27 +18,27 @@ module.exports = {
         "brand-card": "#FCE8E8",
         "brand-light": "#FFF5F5",
 
-      // Neutral Colors
-      "neutral-600": "#101828",
-      "neutral-500": "#4F5F79",
-      "neutral-400": "#98A2B3",
-      "neutral-300": "#CAD0DA",
-      "neutral-200": "#F3F5F7",
-      "neutral-100": "#FFFFFF",
+        // Neutral Colors
+        "neutral-600": "#101828",
+        "neutral-500": "#4F5F79",
+        "neutral-400": "#98A2B3",
+        "neutral-300": "#CAD0DA",
+        "neutral-200": "#F3F5F7",
+        "neutral-100": "#FFFFFF",
 
-      // State Colors
-      success: "#2EBE52",
-      warning: "#F79009",
-      error: "#F04438",
-      info: "#0091EA",
-    },
+        // State Colors
+        success: "#2EBE52",
+        warning: "#F79009",
+        error: "#F04438",
+        info: "#0091EA",
+      },
 
-    // Font Sizes
-    fontSize: {
-      // Body Text
-      "body-sm": ["10px", "120%"],
-      "body-md": ["13px", "120%"],
-      "body-lg": ["16px", "120%"],
+      // Font Sizes
+      fontSize: {
+        // Body Text
+        "body-sm": ["10px", "120%"],
+        "body-md": ["13px", "120%"],
+        "body-lg": ["16px", "120%"],
 
         // Headings
         h1: ["61px", "120%"],
@@ -57,4 +57,3 @@ module.exports = {
   },
   plugins: [flowbite.plugin()],
 };
-export const plugins = [plugin()];

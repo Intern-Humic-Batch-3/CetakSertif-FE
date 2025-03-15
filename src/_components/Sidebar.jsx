@@ -14,10 +14,10 @@ export default function Sidebar() {
 					className="w-52"
 					width={200}
 					height={200}
-					src="/logo1.png"
+					src="/assets/logos/navbar-logo.png"
 					alt="Logo Humic Engineering"
 				/>
-				<section className="bg-brand-secondary text-white rounded-lg p-5">
+				<section className="bg-brand-secondary text-white rounded-lg p-3">
 					<h3 className="text-lg font-semibold">Daniel Admin</h3>
 					<p>danieladmin@gmail.com</p>
 				</section>

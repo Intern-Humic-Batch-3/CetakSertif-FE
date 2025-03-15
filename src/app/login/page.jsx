@@ -71,8 +71,8 @@ export default function LoginPage() {
                 className="w-full rounded-lg border border-neutral-300 focus:ring-error focus:border-error mb-8 md:mb-12 text-body-sm py-4 px-4 pr-12"
               />
               <Image
-                className="absolute right-4 md:right-6 top-6 -translate-y-1/2 cursor-pointer"
-                src={showPassword ? "/icons/eye.svg" : "/icons/eye-slash.svg"}
+                className="absolute right-4 md:right-6 top-[3.2rem] -translate-y-1/2 cursor-pointer"
+                src={showPassword ? "/icons/eye-slash.svg" : "/icons/eye.svg"}
                 width={24}
                 height={24}
                 alt="Toggle Password Visibility"

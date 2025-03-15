@@ -58,6 +58,11 @@ export default function LoginPage() {
               />
             </div>
             <div className="relative">
+              <Label
+                htmlFor="password"
+                value="Password"
+                className="mb-2 block font-semibold text-body-lg"
+              />
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}

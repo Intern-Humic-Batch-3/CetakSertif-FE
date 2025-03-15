@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Button, Navbar } from "flowbite-react";
 import Image from "next/image";
 
@@ -41,7 +42,7 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
   return (
     <>
       {/* NAVBAR */}
-      <Navbar fixed rounded className="fixed w-full z-50 top-0">
+      <Navbar rounded fluid className="w-[100vw]">
         <Navbar.Brand href="/">
           <Image
             src="/assets/logos/navbar-logo.png"
@@ -72,13 +73,15 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
           >
             Cara Kerja
           </Navbar.Link>
-          <Button color="failure">Logout</Button>
+          <Link href="/login">
+            <Button color="failure">Logout</Button>
+          </Link>
         </Navbar.Collapse>
       </Navbar>
 
       {/* Custom Popup */}
       {popUp && (
-        <section className="z-50 fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-black bg-opacity-50">
+        <section className="fixed z-50 top-0 left-0 w-full h-screen flex justify-center items-center bg-black bg-opacity-50">
           <div className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-10 space-y-10">
             <h1 className="font-semibold text-2xl text-center">
               Buat sertifikat dengan mudah!
@@ -86,7 +89,7 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
             <ul className="space-y-5">
               {steps.map((step, index) => (
                 <li key={index} className="flex items-center gap-x-3">
-                  <span className="flex justify-center items-center w-14 h-14 bg-primary text-xl text-white rounded-full p-5">
+                  <span className="flex justify-center items-center w-14 h-14 bg-brand-primary text-xl text-white rounded-full p-5">
                     {step.number}
                   </span>
                   <p className="text-xl">{step.step}</p>
@@ -95,7 +98,7 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
             </ul>
             <button
               onClick={closeModal}
-              className="w-96 bg-primary text-white font-semibold rounded-lg p-4"
+              className=" w-96 bg-brand-primary text-white font-semibold rounded-lg p-4"
             >
               Tutup
             </button>

@@ -5,19 +5,3 @@
 body {
   overflow-x: hidden;
 }
-
-.text-primary {
-  color: #ad141a;
-}
-
-.bg-primary {
-  background-color: #ad141a;
-}
-
-.text-secondary {
-  color: #e61a22;
-}
-
-.bg-secondary {
-  background-color: #e61a22;
-}

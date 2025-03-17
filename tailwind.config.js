@@ -1,22 +1,23 @@
 import { content as _content, plugin } from "flowbite-react/tailwind";
 
-export const content = [
-  "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-  "./src/_components/**/*.{js,ts,jsx,tsx,mdx}",
-  "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  "./node_modules/flowbite-react/**/*.js",
-  "./app/**/*.{js,ts,jsx,tsx}",
-  _content(),
-];
-export const theme = {
-  extend: {
-    // Colors
-    colors: {
-      // Brand Colors
-      "brand-primary": "#AD141A",
-      "brand-secondary": "#E61A22",
-      "brand-card": "#FCE8E8",
-      "brand-light": "#FFF5F5",
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite-react/**/*.js",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    flowbite.content(),
+  ],
+  theme: {
+    extend: {
+      // Colors
+      colors: {
+        // Brand Colors
+        "brand-primary": "#AD141A",
+        "brand-secondary": "#E61A22",
+        "brand-card": "#FCE8E8",
+        "brand-light": "#FFF5F5",
 
       // Neutral Colors
       "neutral-600": "#101828",
@@ -40,14 +41,16 @@ export const theme = {
       "body-md": ["13px", "120%"],
       "body-lg": ["16px", "120%"],
 
-      // Headings
-      h1: ["61px", "120%"],
-      h2: ["49px", "120%"],
-      h3: ["39px", "120%"],
-      h4: ["31px", "120%"],
-      h5: ["25px", "120%"],
-      h6: ["20px", "120%"],
+        // Headings
+        h1: ["61px", "120%"],
+        h2: ["49px", "120%"],
+        h3: ["39px", "120%"],
+        h4: ["31px", "120%"],
+        h5: ["25px", "120%"],
+        h6: ["20px", "120%"],
+      },
     },
   },
+  plugins: [flowbite.plugin()],
 };
 export const plugins = [plugin()];

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function TemplateHumic() {
 	return (
-		<section className="flex flex-col items-center gap-y-5">
+		<section className="mt-10 flex flex-col items-center gap-y-5">
 			<Image
 				className="w-[650px] border-2 rounded-lg p-5"
 				src="/assets/certificate/cerfiticate-template.png"

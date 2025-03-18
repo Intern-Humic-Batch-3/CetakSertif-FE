@@ -3,10 +3,14 @@ import Sidebar from "@/_components/Sidebar";
 import { usePathname } from "next/navigation";
 import { Flowbite } from "flowbite-react";
 import { useState } from "react";
+import Image from "next/image";
+import Hamburger from "hamburger-react";
 
 export default function DashboardLayout({ children }) {
 	const [popUpCaraKerja, setPopUpCaraKerja] = useState(false);
   const pathname = usePathname();
+  const [navbarStatus, setNavbarStatus] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const steps = [
 		{
@@ -33,42 +37,40 @@ export default function DashboardLayout({ children }) {
 	];
 
   const customTheme = {
-  button: {
-    base: "",
-    color: {
-      default: ""
+    button: {
+      base: "",
+      color: {
+        default: ""
+      },
+      size: {
+        "xs": "p-0"
+      }
     },
-    size: {
-      "xs": "p-0"
+    dropdown: {
+      arrowIcon: "hidden",
+      floating: {
+        content: "py-1 text-sm text-white",
+        item: {
+          container: "",
+          base: "flex w-full cursor-pointer items-center justify-start px-4 py-2 text-sm text-white hover:bg-red-600 focus:bg-red-600 focus:outline-none",
+          icon: "mr-2 h-4 w-4"
+        },
+        style: {
+          auto: "bg-red-500 text-white dark:bg-red-600"
+        },
+      },
     }
-  },
-  dropdown: {
-    arrowIcon: "hidden",
-    floating: {
-      content: "py-1 text-sm text-white",
-      item: {
-        container: "",
-        base: "flex w-full cursor-pointer items-center justify-start px-4 py-2 text-sm text-white hover:bg-red-600 focus:bg-red-600 focus:outline-none",
-        icon: "mr-2 h-4 w-4"
-      },
-      style: {
-        auto: "bg-red-500 text-white dark:bg-red-600"
-      },
-    },
-  }
-};
-
-
+  };
 
 	return (
     <>
       <Flowbite theme={{ theme: customTheme }}>
     		<main className="w-screen h-screen grid grid-cols-12">
-    			<aside className="flex flex-col justify-between col-span-2 shadow-xl p-7">
+    			<aside className="col-span-4 lg:col-span-3 2xl:col-span-2 hidden md:flex flex-col justify-between shadow-xl p-7">
             <Sidebar/>
     			</aside>
-    			<main className="col-span-10 px-7 py-12">
-            <section className={`flex ${pathname == "/dashboard/tambah-sertifikat" | pathname == "/dashboard/input-data-sertifikat" ? 'justify-end' : 'justify-between'}`}>
+    			<main className="col-span-12 md:col-span-8 lg:col-span-9 2xl:col-span-10 px-7 py-12">
+            <section className={`hidden md:flex ${pathname == "/dashboard/tambah-sertifikat" | pathname == "/dashboard/input-data-sertifikat" ? 'justify-end' : 'justify-between'} items-center`}>
               {
                 pathname == "/dashboard/tambah-sertifikat" | pathname == "/dashboard/input-data-sertifikat" ? ('') : (
                   <h1 className="text-2xl font-bold">Hasil sertifikat</h1>
@@ -80,6 +82,34 @@ export default function DashboardLayout({ children }) {
       					Cara Kerja
       				</button>
     			  </section>
+            <section className="flex md:hidden justify-between items-center">
+              <Hamburger
+                size={30}
+                onToggle={(toggled) => {
+                  if (toggled) {
+                    setNavbarStatus(true);
+                  } else {
+                    setNavbarStatus(false);
+                  }
+                }}
+                toggled={isOpen}
+                toggle={setOpen}
+                color="black"
+              />
+              <Image className="w-14" src="/favicon.ico" width="100" height="100" alt="Humic Engineering Logo" />
+            </section>
+            {
+              navbarStatus && (
+                <section onClick={() => {
+                  setNavbarStatus(false) 
+                  setOpen(false)}
+                } className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60">
+                  <aside className="absolute left-0 w-[80vw] sm:w-[70vw] h-full bg-white flex flex-col justify-between shadow-xl p-3 md:p-7">
+                    <Sidebar/>
+      			      </aside>
+                </section>
+              )
+            }
             {children}
           </main>
     		</main>

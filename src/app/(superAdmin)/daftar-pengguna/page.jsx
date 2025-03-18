@@ -9,14 +9,7 @@ export default function DaftarPengguna() {
 
 	return (
 		<>
-			<section className="flex justify-between items-center">
-				<h1 className="text-2xl font-bold">Daftar Pengguna</h1>
-				<button
-					onClick={() => setFormTambahPengguna(true)}
-					className="bg-brand-primary text-lg text-white font-semibold p-3 rounded-lg">
-					Tambah
-				</button>
-			</section>
+			
 			<UserDataTable />
 
 			{formTambahPengguna && (

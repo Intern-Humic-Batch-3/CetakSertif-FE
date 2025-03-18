@@ -51,7 +51,7 @@ export default function Page() {
 						{certificates.map((certificate, index) => (
 							<div
 								key={index}
-								className="col-span-4 flex flex-col items-center border rounded-lg p-5 gap-5">
+								className="col-span-12 sm:col-span-6 lg:col-span-4 flex flex-col items-center border rounded-lg p-5 gap-5">
 								<Image
 									className="w-full"
 									src={certificate.imageUrl}

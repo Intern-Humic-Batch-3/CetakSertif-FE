@@ -9,6 +9,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Humic Engineering | Cetak Sertifikat",
   description: "Platform untuk mencetak sertifikat",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({ children }) {
@@ -16,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${poppins.className} w-screen h-screen overflow-x-hidden`}
-      >
+        >
         {children}
       </body>
     </html>

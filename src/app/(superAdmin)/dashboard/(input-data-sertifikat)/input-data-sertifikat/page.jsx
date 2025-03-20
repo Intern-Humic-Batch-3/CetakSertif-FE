@@ -118,13 +118,13 @@ export default function InputDataSertifikat() {
         </h5>
         <div className="flex flex-col items-center">
           {/* File Excel */}
-          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8 -z-10">
             <Label
               htmlFor="file-upload"
               value="File Excel"
               className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
-            <div className="w-full xl:w-3/4 z-0">
+            <div className="w-full xl:w-3/4">
               <FileInput
                 id="file-upload"
                 sizing="md"
@@ -137,7 +137,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Nama Kegiatan */}
-          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8 -z-10">
             <Label
               htmlFor="namaKegiatan"
               value="Nama Kegiatan"
@@ -155,7 +155,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanggal Kegiatan */}
-          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8 -z-10 ">
             <Label
               value="Tanggal Kegiatan"
               className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
@@ -181,7 +181,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Penyelenggara */}
-          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8 -z-10">
             <Label
               htmlFor="penyelenggara"
               value="Penyelenggara"
@@ -199,7 +199,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanda Tangan (Opsional) */}
-          <div className="flex flex-col w-full mb-12 xl:flex-row xl:mb-14">
+          <div className="flex flex-col w-full mb-12 xl:flex-row xl:mb-14 -z-10">
             <Label
               value="Tanda Tangan (Opsional)"
               className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"

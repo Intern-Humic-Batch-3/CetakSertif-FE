@@ -118,7 +118,7 @@ export default function InputDataSertifikat() {
         </h5>
         <div className="flex flex-col items-center">
           {/* File Excel */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8 -z-10">
             <Label
               htmlFor="file-upload"
               value="File Excel"
@@ -137,7 +137,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Nama Kegiatan */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8 -z-10">
             <Label
               htmlFor="namaKegiatan"
               value="Nama Kegiatan"
@@ -155,7 +155,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanggal Kegiatan */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8 -z-10">
             <Label
               value="Tanggal Kegiatan"
               className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
@@ -181,7 +181,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Penyelenggara */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8 -z-10">
             <Label
               htmlFor="penyelenggara"
               value="Penyelenggara"
@@ -199,7 +199,7 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanda Tangan (Opsional) */}
-          <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24">
+          <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24 -z-10">
             <Label
               value="Tanda Tangan (Opsional)"
               className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"

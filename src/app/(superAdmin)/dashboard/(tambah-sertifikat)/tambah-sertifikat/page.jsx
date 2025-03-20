@@ -2,22 +2,25 @@ import ImageSquare from "@/icons/imageSquare";
 import Link from "next/link";
 
 export default function TambahSertifikat() {
-	return (
-		<>
-			<section className="my-10 min-h-[70vh] flex justify-center items-center border-8 border-dashed border-zinc-600 rounded-3xl">
-				<section className="flex flex-col items-center gap-y-5">
-					<ImageSquare className={"w-20"} />
-					<h1 className="text-2xl font-semibold">
-						Silahkan Masukkan Template Sertifikat di Sini!
-					</h1>
-					<p className="text-xl">Hanya Mendukung JPG dan PNG</p>
-				</section>
-			</section>
-			<Link href="/dashboard/input-data-sertifikat" className="mt-5">
-				<button className="w-full bg-brand-primary text-white text-xl font-semibold rounded-lg p-3">
-					Submit
-				</button>
-			</Link>
-		</>
-	);
+  return (
+    <>
+      <section className="flex border-8 border-dashed border-zinc-600 justify-center rounded-3xl items-center md:px-8 min-h-[70vh] my-10 px-4 sm:px-6">
+        <section className="flex flex-col text-center gap-y-5 items-center">
+          <ImageSquare className={"w-16 sm:w-20"} />
+          <h1 className="text-xl font-semibold sm:text-2xl">
+            Silahkan Masukkan Template Sertifikat di Sini!
+          </h1>
+          <p className="text-lg sm:text-xl">Hanya Mendukung JPG dan PNG</p>
+        </section>
+      </section>
+      <Link
+        href="/dashboard/input-data-sertifikat"
+        className="block md:px-8 mt-5 px-4 sm:px-6"
+      >
+        <button className="bg-brand-primary p-3 rounded-lg text-lg text-white w-full font-semibold sm:text-xl">
+          Submit
+        </button>
+      </Link>
+    </>
+  );
 }

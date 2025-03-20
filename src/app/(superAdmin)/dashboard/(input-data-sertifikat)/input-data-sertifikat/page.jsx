@@ -112,42 +112,42 @@ export default function InputDataSertifikat() {
   return (
     <>
       {/* Form Input */}
-      <div className="lg:mx-32 md:mx-16 min-h-screen mx-4 pt-20 sm:mx-8">
-        <h5 className="text-xl font-semibold mb-8 md:mb-16 md:text-3xl sm:mb-12 sm:text-2xl">
+      <div className="xl:mx-32 md:mx-12 min-h-screen mx-4 pt-20">
+        <h5 className="text-xl font-semibold mb-8 xl:mb-10 xl:text-2xl">
           Input Data Sertifikat
         </h5>
         <div className="flex flex-col items-center">
           {/* File Excel */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
             <Label
               htmlFor="file-upload"
               value="File Excel"
-              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+              className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
-            <div className="w-full md:w-5/6 sm:w-3/4">
+            <div className="w-full xl:w-3/4 z-0">
               <FileInput
                 id="file-upload"
-                sizing="md sm:lg"
+                sizing="md"
                 onChange={(e) => handleFileChange(e, "fileExcel")}
               />
-              <p className="text-sm mt-2">
+              <p className="text-sm mt-2 text-gray-600 xl:text-base">
                 Format file XLSX dengan ukuran maksimal 3 MB
               </p>
             </div>
           </div>
 
           {/* Nama Kegiatan */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
             <Label
               htmlFor="namaKegiatan"
               value="Nama Kegiatan"
-              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+              className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
             <TextInput
               id="namaKegiatan"
               type="text"
-              sizing="md sm:lg"
-              className="w-full md:w-5/6 sm:w-3/4"
+              sizing="md"
+              className="w-full xl:w-3/4"
               value={formData.namaKegiatan}
               onChange={handleChange}
               required
@@ -155,15 +155,15 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanggal Kegiatan */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
             <Label
               value="Tanggal Kegiatan"
-              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+              className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
-            <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">
+            <div className="flex flex-col w-full gap-4 xl:flex-row xl:gap-4 xl:w-3/4">
               <Datepicker
                 id="start-date"
-                sizing="md sm:lg"
+                sizing="md"
                 className="w-full"
                 selected={formData.tanggalMulai}
                 onChange={(date) => handleDateChange(date, "tanggalMulai")}
@@ -171,7 +171,7 @@ export default function InputDataSertifikat() {
               />
               <Datepicker
                 id="end-date"
-                sizing="md sm:lg"
+                sizing="md"
                 className="w-full"
                 selected={formData.tanggalSelesai}
                 onChange={(date) => handleDateChange(date, "tanggalSelesai")}
@@ -181,17 +181,17 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Penyelenggara */}
-          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+          <div className="flex flex-col w-full mb-6 xl:flex-row xl:mb-8">
             <Label
               htmlFor="penyelenggara"
               value="Penyelenggara"
-              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+              className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
             <TextInput
               id="penyelenggara"
               type="text"
-              sizing="md sm:lg"
-              className="w-full md:w-5/6 sm:w-3/4"
+              sizing="md"
+              className="w-full xl:w-3/4"
               value={formData.penyelenggara}
               onChange={handleChange}
               required
@@ -199,17 +199,17 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanda Tangan (Opsional) */}
-          <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24">
+          <div className="flex flex-col w-full mb-12 xl:flex-row xl:mb-14">
             <Label
               value="Tanda Tangan (Opsional)"
-              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+              className="mb-2 xl:w-1/4 xl:mb-0 font-medium text-gray-700 xl:text-base"
             />
-            <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">
+            <div className="flex flex-col w-full gap-4 xl:flex-row xl:gap-4 xl:w-3/4">
               {formData.tandaTangan.map((_, index) => (
                 <FileInput
                   key={index}
                   data-index={index}
-                  sizing="md sm:lg"
+                  sizing="md"
                   className="w-full"
                   onChange={(e) => handleFileChange(e, "tandaTangan")}
                 />
@@ -220,7 +220,7 @@ export default function InputDataSertifikat() {
           {/* Tombol Submit */}
           <button
             onClick={handleSubmit}
-            className="bg-brand-primary rounded-lg text-base text-white w-full duration-300 font-semibold hover:brightness-75 md:px-72 md:text-xl px-12 py-4 sm:px-24 sm:py-6 sm:text-lg sm:w-auto"
+            className="bg-brand-primary rounded-xl text-base text-white w-full duration-300 font-semibold hover:brightness-75 xl:w-1/2 xl:text-xl px-12 py-4 xl:px-12 xl:py-4"
           >
             Submit
           </button>

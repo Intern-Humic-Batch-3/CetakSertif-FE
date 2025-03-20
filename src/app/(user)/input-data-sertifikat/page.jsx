@@ -1,9 +1,8 @@
 "use client";
-import { useState } from "react";
-import * as XLSX from "xlsx"; // Import XLSX untuk parsing file Excel
+import { Datepicker, FileInput, Label, TextInput } from "flowbite-react";
 import { useRouter } from "next/navigation";
-import { FileInput, Label, Datepicker, TextInput } from "flowbite-react";
-import Navbar from "@/_components/Navbar";
+import { useState } from "react";
+import * as XLSX from "xlsx";
 
 export default function InputDataSertifikat() {
   const router = useRouter();
@@ -14,13 +13,11 @@ export default function InputDataSertifikat() {
     tanggalMulai: null,
     tanggalSelesai: null,
     penyelenggara: "",
-    tandaTangan: [null, null, null], // opsional
+    tandaTangan: [null, null, null],
   });
 
-  // State untuk menyimpan hasil parsing Excel (array 2D)
   const [excelData, setExcelData] = useState([]);
 
-  // handleFileChange: Validasi & parsing file Excel, atau update tanda tangan
   const handleFileChange = (event, field) => {
     const file = event.target.files[0];
     if (file) {
@@ -56,7 +53,7 @@ export default function InputDataSertifikat() {
         reader.onload = (e) => {
           const data = new Uint8Array(e.target.result);
           const workbook = XLSX.read(data, { type: "array" });
-          const sheetName = workbook.SheetNames[0]; // Ambil sheet pertama
+          const sheetName = workbook.SheetNames[0];
           const worksheet = workbook.Sheets[sheetName];
           const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
           setExcelData(jsonData);
@@ -67,21 +64,16 @@ export default function InputDataSertifikat() {
     }
   };
 
-  // handleChange: Update input teks
   const handleChange = (event) => {
     const { id, value } = event.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // handleDateChange: Gunakan onChange untuk Datepicker agar mengembalikan Date object
   const handleDateChange = (date, field) => {
-    // Pastikan 'date' adalah Date object; jika tidak, ambil dari event.target.value
     setFormData((prev) => ({ ...prev, [field]: date }));
   };
 
-  // handleSubmit: Validasi required dan navigasi ke halaman baru untuk generate sertifikat
   const handleSubmit = () => {
-    // Validasi semua field required kecuali tanda tangan
     if (
       !formData.fileExcel ||
       !formData.namaKegiatan ||
@@ -93,9 +85,6 @@ export default function InputDataSertifikat() {
       return;
     }
 
-    // Buat sanitized data:
-    // - Hilangkan file (fileExcel dan tandaTangan) karena tidak bisa di-JSON.stringify
-    // - Ubah tanggal menjadi string ISO
     const { fileExcel, tandaTangan, ...rest } = formData;
     const sanitizedFormData = {
       ...rest,
@@ -122,42 +111,43 @@ export default function InputDataSertifikat() {
 
   return (
     <>
-      {/* Navbar Fixed */}
-      <div className="fixed top-0 left-0 w-screen z-50">
-        <Navbar />
-      </div>
-
       {/* Form Input */}
-      <div className="m-32 pt-20">
-        <h5 className="text-h5 font-semibold mb-16">Input Data Sertifikat</h5>
+      <div className="lg:mx-32 md:mx-16 min-h-screen mx-4 pt-20 sm:mx-8">
+        <h5 className="text-xl font-semibold mb-8 md:mb-16 md:text-3xl sm:mb-12 sm:text-2xl">
+          Input Data Sertifikat
+        </h5>
         <div className="flex flex-col items-center">
           {/* File Excel */}
-          <div className="flex w-full items-center mb-8">
-            <Label htmlFor="file-upload" value="File Excel" className="w-1/6" />
-            <div className="w-5/6">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+            <Label
+              htmlFor="file-upload"
+              value="File Excel"
+              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+            />
+            <div className="w-full md:w-5/6 sm:w-3/4">
               <FileInput
                 id="file-upload"
-                sizing="lg"
+                sizing="md sm:lg"
                 onChange={(e) => handleFileChange(e, "fileExcel")}
               />
-              <p className="text-body-md mt-4">
+              <p className="text-sm mt-2">
                 Format file XLSX dengan ukuran maksimal 3 MB
               </p>
             </div>
           </div>
 
           {/* Nama Kegiatan */}
-          <div className="flex items-center w-full mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
             <Label
               htmlFor="namaKegiatan"
               value="Nama Kegiatan"
-              className="w-1/6"
+              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
             />
             <TextInput
               id="namaKegiatan"
               type="text"
-              sizing="lg"
-              className="w-5/6"
+              sizing="md sm:lg"
+              className="w-full md:w-5/6 sm:w-3/4"
               value={formData.namaKegiatan}
               onChange={handleChange}
               required
@@ -165,12 +155,15 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanggal Kegiatan */}
-          <div className="flex items-center w-full mb-8">
-            <Label value="Tanggal Kegiatan" className="w-1/6" />
-            <div className="flex w-5/6 gap-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
+            <Label
+              value="Tanggal Kegiatan"
+              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+            />
+            <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">
               <Datepicker
                 id="start-date"
-                sizing="lg"
+                sizing="md sm:lg"
                 className="w-full"
                 selected={formData.tanggalMulai}
                 onChange={(date) => handleDateChange(date, "tanggalMulai")}
@@ -178,7 +171,7 @@ export default function InputDataSertifikat() {
               />
               <Datepicker
                 id="end-date"
-                sizing="lg"
+                sizing="md sm:lg"
                 className="w-full"
                 selected={formData.tanggalSelesai}
                 onChange={(date) => handleDateChange(date, "tanggalSelesai")}
@@ -188,17 +181,17 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Penyelenggara */}
-          <div className="flex items-center w-full mb-8">
+          <div className="flex flex-col w-full mb-6 sm:flex-row sm:mb-8">
             <Label
               htmlFor="penyelenggara"
               value="Penyelenggara"
-              className="w-1/6"
+              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
             />
             <TextInput
               id="penyelenggara"
               type="text"
-              sizing="lg"
-              className="w-5/6"
+              sizing="md sm:lg"
+              className="w-full md:w-5/6 sm:w-3/4"
               value={formData.penyelenggara}
               onChange={handleChange}
               required
@@ -206,14 +199,17 @@ export default function InputDataSertifikat() {
           </div>
 
           {/* Tanda Tangan (Opsional) */}
-          <div className="flex items-center w-full mb-24">
-            <Label value="Tanda Tangan (Opsional)" className="w-1/6" />
-            <div className="flex gap-8 w-5/6">
+          <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24">
+            <Label
+              value="Tanda Tangan (Opsional)"
+              className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
+            />
+            <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">
               {formData.tandaTangan.map((_, index) => (
                 <FileInput
                   key={index}
                   data-index={index}
-                  sizing="lg"
+                  sizing="md sm:lg"
                   className="w-full"
                   onChange={(e) => handleFileChange(e, "tandaTangan")}
                 />
@@ -224,7 +220,7 @@ export default function InputDataSertifikat() {
           {/* Tombol Submit */}
           <button
             onClick={handleSubmit}
-            className="bg-brand-primary text-h5 font-semibold text-white py-6 px-72 rounded-lg hover:brightness-75 duration-300"
+            className="bg-brand-primary rounded-lg text-base text-white w-full duration-300 font-semibold hover:brightness-75 md:px-72 md:text-xl px-12 py-4 sm:px-24 sm:py-6 sm:text-lg sm:w-auto"
           >
             Submit
           </button>

@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
 import { Button, Navbar } from "flowbite-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function CustomNavbar({ userName = "Febry Andrias" }) {
   const [popUp, setPopUp] = useState(false);
@@ -81,24 +81,24 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
 
       {/* Custom Popup */}
       {popUp && (
-        <section className="fixed z-50 top-0 left-0 w-full h-screen flex justify-center items-center bg-black bg-opacity-50">
-          <div className="flex flex-col items-center bg-white rounded-2xl shadow-xl p-10 space-y-10">
-            <h1 className="font-semibold text-2xl text-center">
+        <section className="flex bg-black bg-opacity-50 h-screen justify-center w-full fixed items-center left-0 px-4 sm:px-6 top-0">
+          <div className="flex flex-col bg-white p-6 rounded-2xl shadow-xl w-full items-center lg:max-w-2xl max-w-md md:max-w-xl md:p-10 md:space-y-10 sm:max-w-lg sm:p-8 sm:space-y-8 space-y-6">
+            <h1 className="text-base text-center font-semibold md:text-xl sm:text-lg">
               Buat sertifikat dengan mudah!
             </h1>
-            <ul className="space-y-5">
+            <ul className="w-full sm:space-y-5 space-y-4">
               {steps.map((step, index) => (
-                <li key={index} className="flex items-center gap-x-3">
-                  <span className="flex justify-center items-center w-14 h-14 bg-brand-primary text-xl text-white rounded-full p-5">
+                <li key={index} className="flex gap-x-3 items-center">
+                  <span className="flex bg-brand-primary h-10 justify-center p-3 rounded-full text-sm text-white w-10 items-center md:h-14 md:p-5 md:text-lg md:w-14 shrink-0 sm:h-12 sm:p-4 sm:text-base sm:w-12">
                     {step.number}
                   </span>
-                  <p className="text-xl">{step.step}</p>
+                  <p className="text-sm md:text-base sm:text-sm">{step.step}</p>
                 </li>
               ))}
             </ul>
             <button
               onClick={closeModal}
-              className=" w-96 bg-brand-primary text-white font-semibold rounded-lg p-4"
+              className="bg-brand-primary p-3 rounded-lg text-sm text-white w-full font-semibold lg:w-96 max-w-xs md:max-w-md sm:max-w-sm sm:p-4 sm:text-base"
             >
               Tutup
             </button>

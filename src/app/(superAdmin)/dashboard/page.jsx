@@ -92,11 +92,11 @@ export default function Page() {
             />
           </section>
 
-          <section className="max-h-[70vh] grid grid-cols-12 gap-10 overflow-auto">
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 overflow-auto">
             {certificates.map((certificate) => (
               <div
                 key={certificate.id}
-                className="col-span-12 sm:col-span-6 lg:col-span-4 flex flex-col items-center border rounded-lg p-5 gap-5"
+                className="flex flex-col items-center border rounded-lg p-4 sm:p-5 gap-4 sm:gap-5"
               >
                 <Image
                   className="w-full"

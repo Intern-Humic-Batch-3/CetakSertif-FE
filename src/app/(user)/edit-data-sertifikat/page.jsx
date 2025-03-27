@@ -114,7 +114,7 @@ export default function InputDataSertifikat() {
       {/* Form Input */}
       <div className="lg:mx-32 md:mx-16 min-h-screen mx-4 pt-20 sm:mx-8">
         <h5 className="text-xl font-semibold mb-8 md:mb-16 md:text-3xl sm:mb-12 sm:text-2xl">
-          Input Data Sertifikat
+          Edit Data Sertifikat
         </h5>
         <div className="flex flex-col items-center">
           {/* File Excel */}
@@ -201,7 +201,7 @@ export default function InputDataSertifikat() {
           {/* Tanda Tangan (Opsional) */}
           <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24 -z-10">
             <Label
-              value="Tanda Tangan (Opsional)"
+              value="Tanda Tangan"
               className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
             />
             <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">

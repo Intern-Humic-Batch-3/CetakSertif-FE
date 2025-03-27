@@ -78,10 +78,10 @@ export default function SidebarUser() {
                 } hover:text-brand-primary gap-x-5`}
               >
                 <Link
-                  href="/cetak-sertifikat"
+                  href="/riwayat-sertifikat"
                   className="text-sm md:text-base font-semibold cursor-pointer"
                 >
-                  Riwayat Kerja
+                  Riwayat Sertifikat
                 </Link>
               </li>
               {/* Elemen "Cara Kerja" hanya tampil pada tampilan mobile */}
@@ -93,13 +93,13 @@ export default function SidebarUser() {
               </li>
               <li
                 className={`flex items-center text-lg ${
-                  pathname == "/template-humic"
+                  pathname == "/humic-template"
                     ? "text-brand-primary"
                     : "text-black"
                 } hover:text-brand-primary gap-x-5`}
               >
                 <Link
-                  href="/template-humic"
+                  href="/humic-template"
                   className="text-sm md:text-base font-semibold cursor-pointer"
                 >
                   Template Humic

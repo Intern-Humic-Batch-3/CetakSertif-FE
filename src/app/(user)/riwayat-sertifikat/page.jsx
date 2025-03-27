@@ -78,7 +78,7 @@ export default function Page() {
       {!addCertificateButton && (
         <>
           {/* Search Bar */}
-          <section className="my-6 sm:my-10 bg-gray-100 flex items-center text-base sm:text-lg font-medium py-2 px-3 rounded-lg">
+          {/* <section className="my-6 sm:my-10 bg-gray-100 flex items-center text-base sm:text-lg font-medium py-2 px-3 rounded-lg">
             <Image
               className="w-6 sm:w-7 cursor-pointer"
               src={"/icons/search.svg"}
@@ -91,7 +91,7 @@ export default function Page() {
               className="ml-2 w-full text-gray-500 bg-transparent focus:border-0 focus:ring-0 border-0"
               placeholder="Cari data pengguna"
             />
-          </section>
+          </section> */}
 
           {/* Certificate List */}
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 overflow-auto">

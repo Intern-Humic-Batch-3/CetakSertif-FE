@@ -29,19 +29,21 @@ export default function CustomNavbar({ userName = "Febry Andrias" }) {
       {/* NAVBAR */}
       <nav className="w-full bg-white py-3 px-5 flex justify-between items-center fixed top-0 left-0 z-50 font-semibold">
         <div className="flex items-center space-x-10">
-          <Image
-            src="/assets/logos/navbar-logo.png"
-            width={214}
-            height={214}
-            alt="Logo"
-            priority
-          />
+          <Link href="/cetak-sertifikat">
+            <Image
+              src="/assets/logos/navbar-logo.png"
+              width={214}
+              height={214}
+              alt="Logo"
+              priority
+            />
+          </Link>
           <span className="text-h3">{userName}</span>
         </div>
 
-        <div className="flex items-center space-x-5 text-h6">
+        <div className="flex items-center space-x-10 text-h6">
           <Link
-            href="/riwayat-sertifikat"
+            href="/humic-template"
             className="text-brand-secondary hover:text-brand-primary"
           >
             Humic Template

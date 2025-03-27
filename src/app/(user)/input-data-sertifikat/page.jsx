@@ -201,7 +201,7 @@ export default function InputDataSertifikat() {
           {/* Tanda Tangan (Opsional) */}
           <div className="flex flex-col w-full mb-12 sm:flex-row sm:mb-24 -z-10">
             <Label
-              value="Tanda Tangan (Opsional)"
+              value="Tanda Tangan"
               className="mb-2 md:w-1/6 sm:mb-0 sm:w-1/4"
             />
             <div className="flex flex-col w-full gap-4 md:w-5/6 sm:flex-row sm:gap-8 sm:w-3/4">

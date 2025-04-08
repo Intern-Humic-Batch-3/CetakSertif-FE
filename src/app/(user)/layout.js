@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Hamburger from "@/icons/hamburger";
 import CustomNavbar from "@/_components/Navbar";
 import SidebarUser from "@/_components/SidebarUser";
+import Image from "next/image";
 
 export default function RootLayout({ children }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,15 +26,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {isMobile ? (
-          <>
+          <div className="w-full h-14 bg-white border-b border-brand-primary">
+            <img className="absolute right-4" src="/assets/logos/login-logo.png" alt="Logo" width="55" height="55" />
             {/* Tombol Toggle Sidebar */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="fixed top-0 left-0 p-4 w-full z-50 bg-white"
-            >
+              className="fixed top-0 left-0 p-4 z-50">
               <Hamburger className="w-10 text-black" />
             </button>
-
             {/* Sidebar dengan Toggle (hanya muncul saat dibuka) */}
             {sidebarOpen && (
               <div className="fixed inset-0 bg-black bg-opacity-50 z-40">
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
             )}
-          </>
+          </div>
         ) : (
           <CustomNavbar />
         )}
